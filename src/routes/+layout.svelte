@@ -1,6 +1,5 @@
 <script lang="ts">
   import AnimatedBtn from "$lib/components/AnimatedBtn.svelte";
-  import { BrowserThemeStore } from "$lib/theme";
   import Side from "$lib/components/Side.svelte";
   import ThemeSelector from "$lib/components/ThemeSelector.svelte";
   import "./app.css";
@@ -8,7 +7,7 @@
 </script>
 
 <main
-  class="dark:bg-background min-h-screen dark:text-white/60 text-slate-400 text-sm flex flex-col gap-6 font-inter relative {BrowserThemeStore}"
+  class="dark:bg-background min-h-screen dark:text-white/60 text-slate-400 text-sm flex flex-col gap-6 font-inter relative dark"
 >
   <head>
     <title>R&eacute;gis N. (regisrex)</title>

@@ -1,4 +1,23 @@
 <script lang="ts">
+  function set(mode: "light" | "dark") {
+    if (mode == "light") {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("mode", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("mode", "dark");
+    }
+  }
+  import { onMount } from "svelte";
+  onMount(() => {
+    if (localStorage.getItem("mode") != null)
+      set(localStorage.getItem("mode") as "dark" | "light");
+    else if (new Date().getHours() < 17) {
+      set("dark");
+    } else {
+      set("light");
+    }
+  });
   let darkMode = true;
 
   function handleSwitchDarkMode() {
