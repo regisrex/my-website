@@ -1,0 +1,85 @@
+<script>
+import Heading from '../../../lib/components/md/Heading.svelte'
+import H3 from '../../../lib/components/md/H3.svelte'
+import Link from '../../../lib/components/Link.svelte'
+</script>
+
+<Heading> Validating environment variables </Heading>
+<H3>Intro </H3>
+A lot of backend developers meet this kind of error where they try to use an environment variable which is not set or which is 
+invalid. For example, if you are implementing auth with jsonwebtoken, you should set `JWT_SECRET` in you envirnment variables. In this small blog, I'll share the way that I use 
+to ensure that all required environment variables are valid and available using <Link href="https://zod.dev">zod</Link>  
+
+<H3> The problem I'm trying to solve</H3>
+Let's try to understand the reason why I do this
+
+
+```javascript
+require('dotenv').config()
+
+export function generatToken(user){
+  return jwt.sign({ 
+    _id: user._id,
+    role: user.role },
+    process.env.JWT_SECRET,    //  non-validated env. variable was used here
+    { expiresIn: "1d" }
+  );
+}
+```
+This code above is not sure that `process.env.JWT_ACCESS_TOKEN` is defined and is a valid jwt secret key, and this
+can cause problems when this function is called like what happened to me down here!
+  
+<H3> The solution I use </H3>  
+
+To validate envirnment variables with zod, we need to first create a validation schema that we'll use to validate of course and then we'll directly trigger
+the validation when the module is loaded ( not when the function using an environment variables in invoked ).  
+I somehow recommend typescript to keep the type definitions that zod generated for use
+
+<br/> 
+
+
+Let's try it
+```typescript
+// filename : @/utils/env.ts
+import { config } from 'dotenv'
+import z from 'zod'
+config()  // looad values in .env file into system environment variables
+
+const envSchema = z.object({
+  JWT_SECRET: z.string().min(10 , "Please use a long jwt secret")
+})
+
+// validates and parses `process.env`and return an object or throw an error when the variables are invalid
+const env = envSchema.parse({ ...process.env })
+export default env  
+```
+This ensures that this variable `JWT_SECRET` is defined and valid before bootstraping the app. Make sure that this file is the only one that uses `process.env` object in your source code. Otherwise, you'll be using unvalidated environment variables.
+
+Next, let's see how to use our validated env.
+```typescript 
+// filename: @/middlewares/verifyToken.ts
+
+import env from "@/utils/env"
+import jwt from 'jsonwebtoken'
+export function verifyToken(req,res,next){
+  try{
+    const token = req.headers.authorization;
+    const decoded = await jwt.verify(token, env.JWT_SECRET) // now we're sure that this is available and valid
+    req.user = decoded
+    next()
+  }catch(error : any){
+    // handle error
+    return res.status(401).send("Unauthorized")
+  }
+}
+```
+And this can ensure us that we have not only defined but also valid envirnment variables to use in our app.
+
+<H3> More use  cases </H3>
+I used a simple example to demonstrate the way I use but we can take this to another level, for example validating database connection strings , smtp credentials and more.
+
+
+<H3> Outro </H3>
+I wrote this to share this practice as I think can reduce the number of times the server crashes due to env variables. I used zod because 
+it is my best validation library but you can use any your want, the concept is to trigger validation directly when the module is loaded.
+

@@ -7,14 +7,13 @@
 </script>
 
 <main
-    class="dark:bg-background min-h-screen dark:text-white/60 text-slate-400 text-sm flex flex-col gap-6 font-inter relative leading-6"
+    class="dark:bg-background min-h-screen dark:text-white/60 text-slate-400 text-sm flex flex-col gap-6 font-inter relative leading-7"
 >
     <head>
         <title>R&eacute;gis N. (regisrex)</title>
     </head>
-    <!-- <AnimatedBtn onHover={() => (showside = true)} /> -->
-    <div class="absolute top-4 left-4 flex items-center gap-3">
-        <!-- <AnimatedBtn /> -->
+    <AnimatedBtn onHover={() => (showside = true)} />
+    <div class="absolute top-4 right-4 flex items-center gap-3">
         <ThemeSelector />
     </div>
     {#if showside}
