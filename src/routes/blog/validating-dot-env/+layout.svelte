@@ -1,4 +1,5 @@
 <script>
+  import Link from "$lib/components/Link.svelte";
   import P from "$lib/components/md/P.svelte";
   import { Icon, ArrowLeft } from "svelte-hero-icons";
 </script>
@@ -11,7 +12,7 @@
   </div>
   <div class="p-4 md:w-2/3 msm:w-screen">
     <P>
-      <slot />
+      <slot />     
     </P>
   </div>
 </div>

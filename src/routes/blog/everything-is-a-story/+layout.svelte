@@ -1,4 +1,5 @@
 <script>
+  import Link from "$lib/components/Link.svelte";
   import P from "$lib/components/md/P.svelte";
   import { Icon, ArrowLeft } from "svelte-hero-icons";
 </script>
