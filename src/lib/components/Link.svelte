@@ -5,7 +5,7 @@
 
 <a
   {href}
-  class="underline underline-offset-4 decoration-bluish-200/20 hover:decoration-bluish-200 dark:text-blue-200  text-slate-500 {className}"
+  class="underline underline-offset-4 decoration-bluish-200/20 hover:decoration-bluish-200 dark:text-blue-200  text-slate-400 {className}"
 >
   <slot />
 </a>
