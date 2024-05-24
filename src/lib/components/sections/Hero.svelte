@@ -19,8 +19,8 @@
         href="https://scriptylabs.com">Scriptylabs</Link
       >, Attending 12<sup>th</sup>grade at <Link href="https://rca.ac.rw"
         >Rwanda Coding academy</Link
-      >, Mentoring Rwandese to join the tech community at <Link
-        href="https://rca.ac.rw">WithinTech</Link
+      >,Tech advocate, mentoring and empowering fellow Rwandans to join the tech world at <Link
+        href="https://withintech.org">WithinTech</Link
       >, Pushing some commits to open source projects on <Link
         href="https://github.com/regisrex">Github</Link
       >, Doing some freelance ux-ui design work and posting them on my(<Link
@@ -86,7 +86,7 @@
         : recursively string-search via nested objects
       </li>
       <li class="list-disc">
-        <Link href="https://github.com/regisrex/sharecode">string-hunt</Link>
+        <Link href="https://github.com/regisrex/codelive">codelive</Link>
         : a tiny working clone of codeshare.io
       </li>
     </ul>
