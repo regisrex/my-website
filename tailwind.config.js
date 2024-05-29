@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'background': '#171717',
+        'background': '#060608',
         'ble': '#0F172A',
         'bluish': {
           '100': '#E2E8F0',

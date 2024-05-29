@@ -16,6 +16,7 @@ datasource db {
 model Post {
   id          String   @id @default(uuid()) @map("_id")
   title       String
+  number      Int  @default(0)
   releaseDate DateTime
   description String   @default("A blog written by Regis N.")
   pubId       String   @unique
