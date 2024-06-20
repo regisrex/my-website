@@ -6,9 +6,8 @@
 
 <div>
   <div class="flex items-start w-full">
-    <div class="p-4 w-1/3 msm:hidden md:block"></div>
     <div class="p-4 w-2/3">
-      <p class="text-black dark:text-bluish-100 text-3xl font-black">Blog&nbsp;📒</p>
+      <p class="text-black dark:text-bluish-100 text-3xl font-black">Blog</p>
     </div>
   </div>
   <div class="flex flex-col mt-4">

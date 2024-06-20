@@ -9,7 +9,7 @@
 </script>
 
 <main
-  class="dark:bg-background min-h-screen dark:text-white/60 text-slate-400 text-sm flex flex-col gap-6 font-inter relative leading-7"
+  class="dark:bg-black text-sm  min-h-screen dark:text-white/60 text-slate-400  flex flex-col gap-6 font-inter relative leading-7"
 >
   <head>
     <title>R&eacute;gis N. (regisrex)</title>
@@ -22,10 +22,6 @@
     <Side onMouseLeave={() => (showside = false)} />
   {/if}
   <div class="py-14">
-    <div
-      class="w-[30vw] z-0 h-[30vw] bg-gradient-to-br from-white/5 to-transparent blur-3xl fixed"
-      id="moving-thing"
-    />
     <div class="z-20 relative">
       <slot />
     </div>

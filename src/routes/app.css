@@ -1,10 +1,11 @@
 @import url(prism-night-owl.css);
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Inter';
+    font-family: serif;
     src: url(../assets/fonts/Inter.ttf);
 }
 
@@ -15,13 +16,15 @@
 }
 
 @keyframes draw {
-
     to {
-
         stroke-dashoffset: 0;
     }
 }
 
 body {
     @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+.bgg {
+    background-image: url(../assets/background.jpg);
 }

@@ -10,16 +10,16 @@
   export let description: string;
 </script>
 
-<div class="flex msm:flex-col md:flex-row items-start">
-  <div class="p-4 md:w-1/3 msm:w-3/3">
+<div class="flex flex-col  items-start">
+  <div class="mt-4 ">
     <p
-      class="md:text-right msm:text-left dark:text-bluish-200/50 text-bluish-200"
+      class=" msm:text-left dark:text-bluish-200/50 text-bluish-200"
     >
       {new Date(releaseDate).toDateString().replaceAll("/", " . ")}
     </p>
   </div>
   <div
-    class="p-4 md:w-2/3 md:w-3/3 dark:border-slate-100/5 border-b border-slate-100 {className}"
+    class="p-4 w-full dark:border-slate-100/5 border-b border-slate-100 {className}"
   >
     <!-- svelte-ignore a11y-missing-attribute -->
     <a

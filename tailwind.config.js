@@ -14,7 +14,7 @@ export default {
         }
       },
       fontFamily: {
-        'inter': 'Inter, system-ui'
+        'inter': ['Merriweather']
       },
       screens: {
         msm: '0px'

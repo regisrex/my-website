@@ -5,8 +5,7 @@
 </script>
 
 <Padded>
-  <div class="flex items-start">
-    <div class="p-4 w-1/3 msm:hidden md:block"></div>
+  <div class="flex items-start  ">
     <div class="p-4 w-2/3">
       <p class="text-black dark:text-bluish-100 text-3xl font-black">
         R&eacute;gis N.

@@ -4,13 +4,13 @@
   import { Icon, ArrowLeft } from "svelte-hero-icons";
 </script>
 
-<div class="flex items-start md:flex-row msm:flex-col">
-  <div class="p-4 md:w-1/3 msm:w-screen flex items-end">
+<div class="flex items-start flex-col">
+  <div class="p-4  msm:w-full flex items-end">
     <button on:click={() => history.back()}>
       <Icon src={ArrowLeft} class="w-4 h-4 hover:stroke-white" />
     </button>
   </div>
-  <div class="p-4 md:w-2/3 msm:w-screen">
+  <div class="p-4 msm:w-full">
     <P>
       <slot />
     </P>
